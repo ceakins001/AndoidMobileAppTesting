@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace: AndroidTest;assembly=AndroidTest"
+             x:Class="AndroidTest.MainPage"
+             NavigationPage.HasNavigationBar="false"
+             Appearing="ContentPage_Appearing"
+             >
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        <StackLayout x:Name="mainLayout" IsEnabled="true" BackgroundColor="Black" Spacing="-6" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout x:Name="testLayout" Orientation="Vertical" Padding="0,100,0,0" Spacing="0">
+                <Entry x:Name="txtAddress" Text="Enter Phone Number" Keyboard="Telephone" BackgroundColor="White" TextColor="Blue" Focused="txtAddress_Focused"/>
+                <Button x:Name="btnPickImg" IsVisible="true" Text="Send Image" HeightRequest="50" BackgroundColor="White"
+                        BorderColor="#676767" BorderWidth="1" Padding="0,0,0,0" Clicked="btnPickImg_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="customAlertLayout" IsVisible="false"  BackgroundColor="Black" Padding="10,10,10,10"
+                AbsoluteLayout.LayoutFlags="PositionProportional"                      
+                AbsoluteLayout.LayoutBounds=".5,.5,350,AutoSize">
+            <Label x:Name="lblCustomAlertMessage" Text="[New Message]" TextColor="White"/>
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0">
+                <Button x:Name="btnAlertButton1" Text="[Alert1]" HorizontalOptions="CenterAndExpand" Clicked="btnAlert1_Clicked"/>
+                <Button x:Name="btnAlertButton2" Text="[Alert2]" HorizontalOptions="CenterAndExpand" Clicked="btnAlert2_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+
+        <ActivityIndicator x:Name="activityRunning" IsRunning="false" AbsoluteLayout.LayoutFlags="PositionProportional"                      
+                AbsoluteLayout.LayoutBounds=".5,.5,100,100"/>
+
+    </AbsoluteLayout>
+
+    
+
+</ContentPage>
